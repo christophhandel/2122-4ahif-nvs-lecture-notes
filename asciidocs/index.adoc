@@ -1,0 +1,25 @@
+= Lecture Notes  4ahif - NVS 21/22
+Thomas W. Stütz
+1.0.0, {docdate}: Quarkus, Android Jetpack Compose
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+//ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== 2021-09-28
+
+* Quarkus Grundlagen (Foliensätze)
+
+== 2021-09-30 - entfallen
+
+
+== 2021-10-05 - entfallen wegen AHS-Vortrag
+
