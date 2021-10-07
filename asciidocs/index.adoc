@@ -23,3 +23,10 @@ ifndef::imagesdir[:imagesdir: images]
 
 == 2021-10-05 - entfallen wegen AHS-Vortrag
 
+== 2021-10-07, Do.
+
+image::request-response.png[]
+
+* REST-Clients
+
+* Testen in Quarkus (@QuarkusTest)
