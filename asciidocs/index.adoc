@@ -30,3 +30,104 @@ image::request-response.png[]
 * REST-Clients
 
 * Testen in Quarkus (@QuarkusTest)
+
+== 2021-10-12, Di.
+
+image:v-modell.png[]
+
+[plantuml,vehicle-cld-1,png]
+----
+@startuml
+left to right direction
+class Customer {
+}
+
+class Vehicle {
+}
+
+Customer "*" -- "*" Vehicle : > entleiht
+(Customer, Vehicle) .. Rental
+
+@enduml
+----
+
+[plantuml,vehicle-cld-2,png]
+----
+@startuml
+left to right direction
+class Customer {
+}
+
+class Vehicle {
+}
+
+class Rental {
+  Vehicle: vehicle
+  Customer: customer
+  LocalDate: dateFrom
+  LocalDate: dateTo
+}
+
+Rental "*" --> "1" Vehicle : < wird entliehen
+Customer "1" <-- "*" Rental : > leiht
+
+@enduml
+----
+
+=== Einteilung Mikroprojekte
+
+* Abazović Edina
+* Ablinger Raphael
+* Aichinger Niklas
+* Baumgartner Lukas
+* Bogdan Sebastijan
+* Handel Christoph
+* Hartl Anna
+* Hautzmayer Sheila
+* Hirsch Nico
+* Keintzel Florian
+* Kerschbaum Philipp
+* König Julia
+* Melcher Tamara
+* Neudorfer Niklas
+* Pavelescu Darius-Cristian
+* Pelzeder Joachim
+* Plakolb Marcel
+* Rathberger Jakob
+* Remplbauer Markus
+* Sugic Oliver
+* Tran Michael
+* Tunc Johannes
+
+
+== 2021-10-14
+
+=== REST Context
+=== REST WebApplication Exception
+=== JSON-B, JSON-P
+
+*  https://javaee.github.io/jsonb-spec/users-guide.html
+
+
+=== REST Parameter
+
+* QueryParam
+* PathParam
+* FormParam
+
+== 2021-10-18 (Einschub)
+
+image::jsonb-formparam.png[]
+
+image::hash.png[]
+
+image::mapping.png[]
+
+image::cors.png[]
+
+=== Rest-Endpoints erstellt
+
+* FormParam
+* POST mit Location-Rückgabe
+
+=== Mit JPA begonnen
