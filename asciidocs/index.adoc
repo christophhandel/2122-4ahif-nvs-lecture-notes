@@ -131,3 +131,27 @@ image::cors.png[]
 * POST mit Location-Rückgabe
 
 === Mit JPA begonnen
+
+== 2021-11-04
+
+image::ide-database-overview.png[]
+
+=== 3 Strategien zur Erstellung der Schlüsselwerte
+** Table
+** IDENTITY
+** Sequence
+
+=== Transactions
+
+=== Verwendung von Test zum Ausprobieren von DB-Zugriffen
+
+Begriffe:
+
+* ORM
+* JDBC
+* JAX-RS
+** resteasy
+* JPA
+** Hibernate
+
+=== Repositories für JPA
