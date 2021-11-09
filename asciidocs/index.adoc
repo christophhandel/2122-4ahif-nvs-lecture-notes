@@ -249,7 +249,144 @@ public class Person {
 * https://www.objectdb.com/java/jpa/query/jpql/structure
 
 
+== 2021-11-09
 
+=== Ausführen einer NamedQuery
+
+[source, java,highlight=3-4]
+----
+@Test
+void getAllPersons() {
+    TypedQuery<Person> query = em
+            .createNamedQuery("Person.findAll",Person.class);
+    List<Person> persons = query.getResultList();
+    assertThat(persons.size()).isEqualTo(8);
+    logger.info(persons);
+}
+----
+
+=== Ausführen einer Query
+
+[source,java,highlight=3-4]
+----
+@Test
+void getAllPersonsWithQuery() {
+    TypedQuery<Person> query = em
+            .createQuery("select p from Person p",Person.class);
+    List<Person> persons = query.getResultList();
+    assertThat(persons.size()).isEqualTo(8);
+    logger.info(persons);
+}
+----
+
+=== Ausführen einer NativeQuery
+
+* Es gibt auch hier
+** NativeQuery
+** NativeNamedQuery
+
+[source,java]
+----
+@Test
+void getAllPersonsWithNativeQuery() {
+    Query query = em
+            .createNativeQuery("select p.id, p.name from person p");
+    List<Object[]> persons = query.getResultList();
+    for (Object[] elem : persons) {
+        System.out.println(elem[0] + " " + elem[1]);
+    }
+    assertThat(persons.size()).isEqualTo(9);
+}
+----
+
+* https://thorben-janssen.com/jpa-native-queries/
+
+=== Mikroprojekte-Themen
+
+
+
+
+
+
+|===
+|Name |Thema
+
+|Abazović Edina
+|Stadtrundfahrten
+
+|Ablinger Raphael
+|Linienbusunternehmen inkl. Fahrplan
+
+|Aichinger Niklas
+|Supermarkkt
+
+|Baumgartner Lukas
+|Teehändler
+
+|Bogdan Sebastijan
+|Friedhofsverwaltung
+
+|Handel Christoph
+|Schuhplattln
+
+|Hartl Anna
+|Gärtnerei
+
+|Hautzmayer Sheila
+|Tanzverein
+
+|Hirsch Nico
+|Rezeptseite
+
+|Keintzel Florian
+|Hotel
+
+|Kerschbaum Philipp
+|Fussballverein
+
+|König Julia
+|Tennisverein
+
+|Melcher Tamara
+|Kletterverein mit Kletterrouten
+
+|Neudorfer Niklas
+|Gebäudeverwaltung (wo sind welche Geräte installiert zB Chromecasts)
+
+|Pavelescu Darius-Cristian
+|Musikdatenbank
+
+|Pelzeder Joachim
+|Personaleinteilung in Produktonsbetrieb mit Schichten (es wird durchgehend produziert)
+
+|Plakolb Marcel
+|Luftfahrtlinie (Wo fliegen die Flugzeuge, Linien)
+
+|Rathberger Jakob
+|Doodle
+
+|Remplbauer Markus
+|Modellagentur
+
+|Sugic Oliver
+|Schwimmverein
+
+|Tran Michael
+|Restaurant (Tischreservierung)
+
+|Tunc Johannes
+|Reisebüro
+|===
+
+
+=== Übung
+
+* Erstellen eines Datenmodell in plantuml (3-5 Entitäten)
+* Publishen zu gh-pages
+* Zusätzlich eine kurze Erklärung für die Anwendung
+* Termin: 11.11.2021
+* Ordner im Root-Folder: asciidocs, backend, frontend
+* Erstellen eines Quarkus-Projekts mit einer Tabelle, persisitert in eine postgre-db und einem Endpoint
 
 
 

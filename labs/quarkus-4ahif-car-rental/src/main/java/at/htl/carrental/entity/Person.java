@@ -42,4 +42,13 @@ public class Person {
         this.name = name;
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
