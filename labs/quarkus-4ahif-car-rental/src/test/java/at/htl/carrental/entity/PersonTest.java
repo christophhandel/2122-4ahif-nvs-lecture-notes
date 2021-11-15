@@ -68,4 +68,23 @@ class PersonTest {
         assertThat(persons.size()).isEqualTo(9);
 
     }
+
+    @Test
+    void countLetters() {
+
+        Query query = em.createQuery("select substring(p.name,1,1), count(p) from Person p group by substring(p.name,1,1)");
+        List<Object[]> list = query.getResultList();
+
+        for (Object[] elem : list) {
+            logger.info(elem[0] + " - " + elem[1]);
+        }
+
+        assertThat(list.size()).isEqualTo(8);
+    }
 }
+
+
+
+
+
+

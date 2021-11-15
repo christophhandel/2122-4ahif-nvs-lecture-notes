@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+class A {
+  b: List<B>
+}
+
+class B {
+  a: A
+}
+
+A "1" <-- "*" B
+A --> B
+
+
+@enduml

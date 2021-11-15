@@ -389,4 +389,40 @@ void getAllPersonsWithNativeQuery() {
 * Erstellen eines Quarkus-Projekts mit einer Tabelle, persisitert in eine postgre-db und einem Endpoint
 
 
+=== Erstellen einer aggregierten Abfrage
 
+==== Schritt 1: Sql-Query
+
+[source,sql]
+----
+  select substr(name,1,1), count(*)
+    from person
+group by substr(name,1,1)
+order by 1;
+----
+
+==== Schritt 2: Übertragen nach Java
+
+[source,java]
+----
+@Test
+void countLetters() {
+
+    Query query = em.createQuery("select substring(p.name,1,1), count(p) from Person p group by substring(p.name,1,1)");
+    List<Object[]> list = query.getResultList();
+
+    for (Object[] elem : list) {
+        logger.info(elem[0] + " - " + elem[1]);
+    }
+
+    assertThat(list.size()).isEqualTo(8);
+}
+----
+
+=== Beziehungen zwischen Entitäten - Vererbung
+
+
+* http://edufs.edu.htl-leonding.ac.at/~t.stuetz/download/nvs/presentations.2021/06_JPA.pdf[Skriptum JPA ab Seite 44, window="_blank"]
+
+
+image::assoziative-Beziehung.png[]
