@@ -1,8 +1,11 @@
 package at.htl.carrental.entity;
 
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 public class Rental {
+
+    @ManyToOne
     private Customer customer;
     private Vehicle vehicle;
     private LocalDateTime startDateTime;
@@ -17,6 +20,8 @@ public class Rental {
         this.endDateTime = endDateTime;
         this.discount = discount;
     }
+
+
 
     public Rental() {
     }

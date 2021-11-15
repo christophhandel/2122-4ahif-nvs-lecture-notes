@@ -1,5 +1,6 @@
 package at.htl.carrental.entity;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 
 @Entity

@@ -1,0 +1,16 @@
+GET http://localhost:8080/hello
+Accept: application/json
+
+###
+
+GET http://localhost:8080/hello
+Accept: application/xml
+
+
+
+### mit JSON-P
+
+
+GET http://localhost:8080/hello/jsonp
+
+###
