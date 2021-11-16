@@ -1,6 +1,5 @@
 package at.htl.carrental.entity;
 
-import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +7,14 @@ import javax.persistence.*;
         @NamedQuery(
                 name = "Person.findAll",
                 query = "select p from Person p"
+        ),
+        @NamedQuery(
+                name = "Person.findByName",
+                query = "select p from Person p where p.name LIKE :NAME"
+        ),
+        @NamedQuery(
+                name = "Person.countByInital",
+                query = "select substring(p.name,1, 1), count(p) from Person p group by substring(p.name,1, 1)"
         )
 })
 public class Person {
@@ -15,6 +22,7 @@ public class Person {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "NAME", unique = true)
     private String name;
 
     //region constructors

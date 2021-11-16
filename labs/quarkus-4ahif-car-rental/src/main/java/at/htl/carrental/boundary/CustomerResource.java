@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class CustomerResource {
 
     @Inject
-    Logger logger;
+    Logger LOG;
 
     @Path("/id/{id}")
     @GET
@@ -48,7 +48,7 @@ public class CustomerResource {
         Customer newCustomer = new Customer(
                 name,
                 LocalDate.parse(dob, dtf));
-        logger.info(newCustomer);
+        LOG.info(newCustomer);
         URI uri = uriInfo
                 .getAbsolutePathBuilder()
                 .path("42")
@@ -65,7 +65,7 @@ public class CustomerResource {
             @Context UriInfo uriInfo
     ) {
 
-        logger.info(customer);
+        LOG.info(customer);
         URI uri = uriInfo
                 .getAbsolutePathBuilder()
                 .path("42")

@@ -14,8 +14,8 @@ public class InitBean {
     PersonRepository personRepository;
 
     void init(@Observes StartupEvent event) {
-        Person p = new Person("Susi");
-        personRepository.save(p);
+//        Person p = new Person("Susi");
+//        personRepository.save(p);
     }
 
 }
