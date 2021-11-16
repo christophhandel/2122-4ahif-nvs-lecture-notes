@@ -426,3 +426,82 @@ void countLetters() {
 
 
 image::assoziative-Beziehung.png[]
+
+== 2021-11-16
+
+=== NamedQueries mit Parameter
+
+=== Aggregated Queries
+
+.NamedQuery in Entity
+[source,java]
+----
+package at.htl.carrental.entity;
+
+import javax.persistence.*;
+
+@Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "Person.countByInital",
+                query = "select substring(p.name,1, 1), count(p) from Person p group by substring(p.name,1, 1)"
+        )
+})
+public class Person {
+
+    // ...
+}
+----
+
+.Use NamedQuery in Repository
+[source,java]
+----
+@ApplicationScoped
+public class PersonRepository {
+
+    @Inject
+    EntityManager em;
+
+    // ...
+
+    public Map<Character, Integer> countByInitial() {
+        Map<Character, Integer> result = new HashMap<>();
+        Query query = em
+                .createNamedQuery("Person.countByInital");
+        List<Object[]> initials = query.getResultList();
+        for (Object[] initial : initials) {
+            result.put(
+                    initial[0].toString().charAt(0),
+                    Integer.parseInt(initial[1].toString())
+            );
+        }
+        return result;
+    }
+}
+----
+
+.Test repository method
+[source,java]
+----
+@QuarkusTest
+class PersonTest {
+
+    // ...
+
+    @Test
+    void countLetters() {
+
+        Query query = em.createQuery("select substring(p.name,1,1), count(p) from Person p group by substring(p.name,1,1)");
+        List<Object[]> list = query.getResultList();
+
+        for (Object[] elem : list) {
+            logger.info(elem[0] + " - " + elem[1]);
+        }
+
+        assertThat(list.size()).isEqualTo(8);
+    }
+}
+----
+
+
+
