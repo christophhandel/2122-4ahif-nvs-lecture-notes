@@ -1,0 +1,19 @@
+POST http://localhost:8080/api/create
+Content-Type: application/json
+
+{
+  "id": 1000,
+  "b": [
+    {
+      "text": "abc"
+    },
+    {
+      "text": "def",
+      "c": [
+        {
+          "id": 1
+        }
+      ]
+    }
+  ]
+}
