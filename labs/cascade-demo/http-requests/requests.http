@@ -1,8 +1,8 @@
-POST http://localhost:8080/api/create
+POST http://localhost:8080/api/abc
 Content-Type: application/json
 
 {
-  "id": 1000,
+  "name": "Susi",
   "b": [
     {
       "text": "abc"

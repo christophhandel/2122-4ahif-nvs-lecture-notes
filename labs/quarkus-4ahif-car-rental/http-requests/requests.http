@@ -34,3 +34,51 @@ Content-Type: application/json
 }
 
 ###
+
+GET http://localhost:8080/api/person
+
+###
+
+#http://localhost:8080/api/person
+#
+#HTTP/1.1 200 OK
+#Content-Type: application/json
+#content-length: 166
+#
+#[
+#  {
+#    "id": 1,
+#    "name": "Susi"
+#  },
+#  {
+#    "id": 2,
+#    "name": "Seppi"
+#  },
+#  {
+#    "id": 3,
+#    "name": "Mimi"
+#  },
+#  {
+#    "id": 4,
+#    "name": "Hautzi"
+#  },
+#  {
+#    "id": 5,
+#    "name": "Sami"
+#  },
+#  {
+#    "id": 6,
+#    "name": "Kiki"
+#  },
+#  {
+#    "id": 7,
+#    "name": "Hansi"
+#  }
+#]
+#Response file saved.
+#> 2021-11-30T094429.200.json
+#
+#Response code: 200 (OK); Time: 38ms; Content length: 166 bytes
+
+
+###

@@ -17,9 +17,18 @@ import javax.persistence.*;
                 query = "select substring(p.name,1, 1), count(p) from Person p group by substring(p.name,1, 1)"
         )
 })
+@SequenceGenerator(
+        name = "personSeq",
+        allocationSize = 1,
+        initialValue = 5000,
+        sequenceName = "PERSON_SEQ"
+)
 public class Person {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "personSeq"
+    )
     private Long id;
 
     @Column(name = "NAME", unique = true)
