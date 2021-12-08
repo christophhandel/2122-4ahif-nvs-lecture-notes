@@ -507,3 +507,6 @@ class PersonTest {
 
 * Cascadierende Assoziationen
 
+== 2021-12-07 Panache
+
+https://quarkus.io/guides/hibernate-orm-panache[Simplified Hibernate ORM with Panache]
