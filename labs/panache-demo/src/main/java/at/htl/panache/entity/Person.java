@@ -2,10 +2,7 @@ package at.htl.panache.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Person extends PanacheEntityBase {
@@ -15,6 +12,14 @@ public class Person extends PanacheEntityBase {
     public Long id;
 
     public String name;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "city_name")
+    public City city;
+
+    public City getCity() {
+        return city;
+    }
 
 
     public Person() {

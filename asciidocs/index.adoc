@@ -510,3 +510,16 @@ class PersonTest {
 == 2021-12-07 Panache
 
 https://quarkus.io/guides/hibernate-orm-panache[Simplified Hibernate ORM with Panache]
+
+== 2021-12-13 Panache - Persistence Context
+
+image::persistence-context.png[]
+
+
+* Befindet sich ein Java-Objekt im Persistence Context, so hat es den Status "Managed"
+** Ein Objekt kann den Zustand "managed" durch den Aufruf von persist() erhalten
+** aber auch durch ein Holen des Objekts (Methode find()) aus der DB
+** wichtig ist dabei, dass eine Transaktion aktiv ist
+*** Entweder Verwendung einer UserTransaction (mit tx.begin() und tx.commit())
+*** oder Verwendung von @Transactional
+* Im Persistence Context kann man automatisch DB-Aktionen an abhängige Objekte weitergeben (zB cascading persist, ...)
