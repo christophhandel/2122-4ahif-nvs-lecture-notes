@@ -523,3 +523,49 @@ image::persistence-context.png[]
 *** Entweder Verwendung einer UserTransaction (mit tx.begin() und tx.commit())
 *** oder Verwendung von @Transactional
 * Im Persistence Context kann man automatisch DB-Aktionen an abhängige Objekte weitergeben (zB cascading persist, ...)
+
+== 2021-12-14
+
+=== Datenzugriffs-Pattern
+
+==== Repository-Pattern
+==== Active-Record-Pattern
+
+
+=== Queries in Panache
+
+== 2021-12-21
+
+=== Validation
+
+https://quarkus.io/guides/validation
+
+=== Qute
+
+https://quarkus.io/guides/qute
+
+=== Übung: Validierung und Qute im Microproject
+
+* Einbinden von Validation und Qute ins Mikroprojekt
+* zb Bei Validation:
+** nicht alle (Entity-)Klassen müssen validiert werden.
+** es sind allerdings die Konzepte aus dem Tutorial zu verwenden, zB
+*** vorgefertigte Validatoren
+*** Erstellung eines eigenen Validators
+* Es ist ein asciidoc-File zu erstellen (im Ordner asciidocs), in dem die Arbeiten dokumentiert werden.
+** vergleichbar mit den Lecture (pro Datum ein Kapitel) ist auch in diesen adoc-File für jede Technologie (Übung) eine kurze Doku zu erstellen (Cheat Sheet)
+*** Warum benötige ich das? (Einsatzzweck)
+*** Ev. die Alternativen anführen
+*** Möglichkeiten der Anwendung (Code im Microproject kurz erklärt)
+** diese Asciidocs sollen automatisch als gh-pages dargestellt werden
+*** https://github.com/htl-leonding-college/asciidoctor-docker-template/releases/tag/v1.1.4
+*** https://github.com/htl-leonding-college/asciidoctor-convert-template
+
+
+image::9EEB110B-7A0D-4789-923E-2BA96424C1BF_1_105_c.jpeg[]
+image::83005B78-FC58-424C-8ED4-73B08DA2831A_1_105_c.jpeg[]
+image::4698D10F-BB69-46A7-8EC7-1C336F8D6AE5_1_105_c.jpeg[]
+image::95078A62-C1F7-41A5-A9E6-553C0C8143D8_1_105_c.jpeg[]
+
+
+
