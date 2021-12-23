@@ -569,3 +569,20 @@ image::95078A62-C1F7-41A5-A9E6-553C0C8143D8_1_105_c.jpeg[]
 
 
 
+== 2021-12-23
+
+=== Übung: gRPC - Termin: 5. Jänner 2022
+
+* Recherche: Was ist gRPC? (Einsatzzweck, welches Problem wird gelöst, Konzept)
+* Mutiny: https://quarkus.io/guides/getting-started-reactive
+* Verwendung in Quarkus -> Tutorials auf quarkus.io
++
+image::grpc-tutorials.png[]
+
+* Einbauen ins Mikroprojekt und dokumentieren
+
+
+
+
+
+
