@@ -581,8 +581,15 @@ image::grpc-tutorials.png[]
 
 * Einbauen ins Mikroprojekt und dokumentieren
 
+== Qute
 
+image::qute.png[]
 
-
+* Beispiel
+** In der Klasse StudentResource sind die Qute-Template typisiert deklariert.
+** Wird im Browser die jeweilige Route des Qute-Templates aufgerufen, liefert der Server die das gerenderte Template als html aus
+** Der User kann nun zB ein Formular ausfüllen.
+** Nach dem Klicken auf den Submit Button, werden die Inhalte der Formularfelder an den im Form-Attribut "action" angegeben REST-Endpoint übermittelt.
+** Dieser REST-Endpoint gibt nun die neue Route jener Seite, die als nächstes angezeigt wird, an den Browser zurück
 
 
