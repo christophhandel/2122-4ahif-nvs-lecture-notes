@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="author" content="Thomas W. Stütz">
+<link rel="icon" type="image/png" href="themes/favicon.png">
+<title>Lecture Notes  4ahif - NVS 21/22</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<style>
+pre.rouge .hll {
+  background-color: #ffc;
+}
+pre.rouge .hll * {
+  background-color: initial;
+}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Lecture Notes  4ahif - NVS 21/22</h1>
+<div class="details">
+<span id="author" class="author">Thomas W. Stütz</span><br>
+<span id="revnumber">version 1.0.0,</span>
+<span id="revdate">2022-01-10</span>
+<br><span id="revremark">Quarkus, Android Jetpack Compose</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_2021_09_28">1. 2021-09-28</a></li>
+<li><a href="#_2021_09_30_entfallen">2. 2021-09-30 - entfallen</a></li>
+<li><a href="#_2021_10_05_entfallen_wegen_ahs_vortrag">3. 2021-10-05 - entfallen wegen AHS-Vortrag</a></li>
+<li><a href="#_2021_10_07_do">4. 2021-10-07, Do.</a></li>
+<li><a href="#_2021_10_12_di">5. 2021-10-12, Di.</a>
+<ul class="sectlevel2">
+<li><a href="#_einteilung_mikroprojekte">5.1. Einteilung Mikroprojekte</a></li>
+</ul>
+</li>
+<li><a href="#_2021_10_14">6. 2021-10-14</a>
+<ul class="sectlevel2">
+<li><a href="#_rest_context">6.1. REST Context</a></li>
+<li><a href="#_rest_webapplication_exception">6.2. REST WebApplication Exception</a></li>
+<li><a href="#_json_b_json_p">6.3. JSON-B, JSON-P</a></li>
+<li><a href="#_rest_parameter">6.4. REST Parameter</a></li>
+</ul>
+</li>
+<li><a href="#_2021_10_18_einschub">7. 2021-10-18 (Einschub)</a>
+<ul class="sectlevel2">
+<li><a href="#_rest_endpoints_erstellt">7.1. Rest-Endpoints erstellt</a></li>
+<li><a href="#_mit_jpa_begonnen">7.2. Mit JPA begonnen</a></li>
+</ul>
+</li>
+<li><a href="#_2021_11_04">8. 2021-11-04</a>
+<ul class="sectlevel2">
+<li><a href="#_3_strategien_zur_erstellung_der_schlüsselwerte">8.1. 3 Strategien zur Erstellung der Schlüsselwerte</a></li>
+<li><a href="#_transactions">8.2. Transactions</a></li>
+<li><a href="#_verwendung_von_test_zum_ausprobieren_von_db_zugriffen">8.3. Verwendung von Test zum Ausprobieren von DB-Zugriffen</a></li>
+</ul>
+</li>
+<li><a href="#_2021_11_08">9. 2021-11-08</a>
+<ul class="sectlevel2">
+<li><a href="#_mögliche_fragen">9.1. Mögliche Fragen:</a></li>
+<li><a href="#_repositories_für_jpa">9.2. Repositories für JPA</a></li>
+<li><a href="#_startup">9.3. Startup</a></li>
+<li><a href="#_automatisches_befüllen_der_tabelle_mit_import_sql">9.4. Automatisches Befüllen der Tabelle mit IMPORT.sql</a></li>
+<li><a href="#_namedqueries">9.5. NamedQueries</a></li>
+</ul>
+</li>
+<li><a href="#_2021_11_09">10. 2021-11-09</a>
+<ul class="sectlevel2">
+<li><a href="#_ausführen_einer_namedquery">10.1. Ausführen einer NamedQuery</a></li>
+<li><a href="#_ausführen_einer_query">10.2. Ausführen einer Query</a></li>
+<li><a href="#_ausführen_einer_nativequery">10.3. Ausführen einer NativeQuery</a></li>
+<li><a href="#_mikroprojekte_themen">10.4. Mikroprojekte-Themen</a></li>
+<li><a href="#_übung">10.5. Übung</a></li>
+<li><a href="#_erstellen_einer_aggregierten_abfrage">10.6. Erstellen einer aggregierten Abfrage</a></li>
+<li><a href="#_beziehungen_zwischen_entitäten_vererbung">10.7. Beziehungen zwischen Entitäten - Vererbung</a></li>
+</ul>
+</li>
+<li><a href="#_2021_11_16">11. 2021-11-16</a>
+<ul class="sectlevel2">
+<li><a href="#_namedqueries_mit_parameter">11.1. NamedQueries mit Parameter</a></li>
+<li><a href="#_aggregated_queries">11.2. Aggregated Queries</a></li>
+</ul>
+</li>
+<li><a href="#_2021_11_29_vorbereitung_für_test_w">12. 2021-11-29 Vorbereitung für Test-W</a></li>
+<li><a href="#_2021_12_07_panache">13. 2021-12-07 Panache</a></li>
+<li><a href="#_2021_12_13_panache_persistence_context">14. 2021-12-13 Panache - Persistence Context</a></li>
+<li><a href="#_2021_12_14">15. 2021-12-14</a>
+<ul class="sectlevel2">
+<li><a href="#_datenzugriffs_pattern">15.1. Datenzugriffs-Pattern</a></li>
+<li><a href="#_queries_in_panache">15.2. Queries in Panache</a></li>
+</ul>
+</li>
+<li><a href="#_2021_12_21">16. 2021-12-21</a>
+<ul class="sectlevel2">
+<li><a href="#_validation">16.1. Validation</a></li>
+<li><a href="#_qute">16.2. Qute</a></li>
+<li><a href="#_übung_validierung_und_qute_im_microproject">16.3. Übung: Validierung und Qute im Microproject</a></li>
+</ul>
+</li>
+<li><a href="#_2021_12_23">17. 2021-12-23</a>
+<ul class="sectlevel2">
+<li><a href="#_übung_grpc_termin_5_jänner_2022">17.1. Übung: gRPC - Termin: 5. Jänner 2022</a></li>
+</ul>
+</li>
+<li><a href="#_qute_2">18. Qute</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_2021_09_28"><a class="anchor" href="#_2021_09_28"></a>1. 2021-09-28</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Quarkus Grundlagen (Foliensätze)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_09_30_entfallen"><a class="anchor" href="#_2021_09_30_entfallen"></a>2. 2021-09-30 - entfallen</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_10_05_entfallen_wegen_ahs_vortrag"><a class="anchor" href="#_2021_10_05_entfallen_wegen_ahs_vortrag"></a>3. 2021-10-05 - entfallen wegen AHS-Vortrag</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_10_07_do"><a class="anchor" href="#_2021_10_07_do"></a>4. 2021-10-07, Do.</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/request-response.png" alt="request response">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>REST-Clients</p>
+</li>
+<li>
+<p>Testen in Quarkus (@QuarkusTest)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_10_12_di"><a class="anchor" href="#_2021_10_12_di"></a>5. 2021-10-12, Di.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="images/v-modell.png" alt="v modell"></span></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vehicle-cld-1.png" alt="vehicle cld 1" width="445" height="129">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vehicle-cld-2.png" alt="vehicle cld 2" width="584" height="119">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_einteilung_mikroprojekte"><a class="anchor" href="#_einteilung_mikroprojekte"></a>5.1. Einteilung Mikroprojekte</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Abazović Edina</p>
+</li>
+<li>
+<p>Ablinger Raphael</p>
+</li>
+<li>
+<p>Aichinger Niklas</p>
+</li>
+<li>
+<p>Baumgartner Lukas</p>
+</li>
+<li>
+<p>Bogdan Sebastijan</p>
+</li>
+<li>
+<p>Handel Christoph</p>
+</li>
+<li>
+<p>Hartl Anna</p>
+</li>
+<li>
+<p>Hautzmayer Sheila</p>
+</li>
+<li>
+<p>Hirsch Nico</p>
+</li>
+<li>
+<p>Keintzel Florian</p>
+</li>
+<li>
+<p>Kerschbaum Philipp</p>
+</li>
+<li>
+<p>König Julia</p>
+</li>
+<li>
+<p>Melcher Tamara</p>
+</li>
+<li>
+<p>Neudorfer Niklas</p>
+</li>
+<li>
+<p>Pavelescu Darius-Cristian</p>
+</li>
+<li>
+<p>Pelzeder Joachim</p>
+</li>
+<li>
+<p>Plakolb Marcel</p>
+</li>
+<li>
+<p>Rathberger Jakob</p>
+</li>
+<li>
+<p>Remplbauer Markus</p>
+</li>
+<li>
+<p>Sugic Oliver</p>
+</li>
+<li>
+<p>Tran Michael</p>
+</li>
+<li>
+<p>Tunc Johannes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_10_14"><a class="anchor" href="#_2021_10_14"></a>6. 2021-10-14</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rest_context"><a class="anchor" href="#_rest_context"></a>6.1. REST Context</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_rest_webapplication_exception"><a class="anchor" href="#_rest_webapplication_exception"></a>6.2. REST WebApplication Exception</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_json_b_json_p"><a class="anchor" href="#_json_b_json_p"></a>6.3. JSON-B, JSON-P</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://javaee.github.io/jsonb-spec/users-guide.html" class="bare">https://javaee.github.io/jsonb-spec/users-guide.html</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rest_parameter"><a class="anchor" href="#_rest_parameter"></a>6.4. REST Parameter</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>QueryParam</p>
+</li>
+<li>
+<p>PathParam</p>
+</li>
+<li>
+<p>FormParam</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_10_18_einschub"><a class="anchor" href="#_2021_10_18_einschub"></a>7. 2021-10-18 (Einschub)</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/jsonb-formparam.png" alt="jsonb formparam">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/hash.png" alt="hash">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mapping.png" alt="mapping">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cors.png" alt="cors">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rest_endpoints_erstellt"><a class="anchor" href="#_rest_endpoints_erstellt"></a>7.1. Rest-Endpoints erstellt</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>FormParam</p>
+</li>
+<li>
+<p>POST mit Location-Rückgabe</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mit_jpa_begonnen"><a class="anchor" href="#_mit_jpa_begonnen"></a>7.2. Mit JPA begonnen</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_11_04"><a class="anchor" href="#_2021_11_04"></a>8. 2021-11-04</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/ide-database-overview.png" alt="ide database overview">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_strategien_zur_erstellung_der_schlüsselwerte"><a class="anchor" href="#_3_strategien_zur_erstellung_der_schlüsselwerte"></a>8.1. 3 Strategien zur Erstellung der Schlüsselwerte</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Table</p>
+</li>
+<li>
+<p>IDENTITY</p>
+</li>
+<li>
+<p>Sequence</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transactions"><a class="anchor" href="#_transactions"></a>8.2. Transactions</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_verwendung_von_test_zum_ausprobieren_von_db_zugriffen"><a class="anchor" href="#_verwendung_von_test_zum_ausprobieren_von_db_zugriffen"></a>8.3. Verwendung von Test zum Ausprobieren von DB-Zugriffen</h3>
+<div class="paragraph">
+<p>Begriffe:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ORM</p>
+</li>
+<li>
+<p>JDBC</p>
+</li>
+<li>
+<p>JAX-RS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>resteasy</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>JPA</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hibernate</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_11_08"><a class="anchor" href="#_2021_11_08"></a>9. 2021-11-08</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mögliche_fragen"><a class="anchor" href="#_mögliche_fragen"></a>9.1. Mögliche Fragen:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Welche Möglichkeiten gibt es, ein Quarkus Projekt zu erstellen?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Assistent auf quarkus.io</p>
+</li>
+<li>
+<p>Assistent in IDE (zB IntelliJ)</p>
+</li>
+<li>
+<p>Aufruf mit mvn</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Strategien zum Erzeugen von Primärschlüsselwerten?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TABLE</p>
+</li>
+<li>
+<p>SEQUENCE</p>
+</li>
+<li>
+<p>IDENTITY</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Wie kann man eine Testklasse für eine beliebige Klasse erstellen?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cursor auf Klassenbezeichnung</p>
+</li>
+<li>
+<p>Rechte Maustaste</p>
+</li>
+<li>
+<p>Create Test</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Was bewirkt die Annotation <code>@QuarkusTest</code>?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_repositories_für_jpa"><a class="anchor" href="#_repositories_für_jpa"></a>9.2. Repositories für JPA</h3>
+<div class="paragraph">
+<p><a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design" target="_blank" rel="noopener">The Repository pattern</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/microsoft-repository-pattern.png" alt="microsoft repository pattern">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_startup"><a class="anchor" href="#_startup"></a>9.3. Startup</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Methode init() wird sofort nach Start der Applikation ausgeführt (vglbar mit  main()-Methode)</p>
+</li>
+<li>
+<p>Die init()-Methode kann beliebig benannt werden</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">at.htl.carrental.control</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">at.htl.carrental.entity.Person</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.quarkus.runtime.StartupEvent</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.enterprise.context.ApplicationScoped</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.enterprise.event.Observes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
+
+<span class="nd">@ApplicationScoped</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">InitBean</span> <span class="o">{</span>
+
+    <span class="nd">@Inject</span>
+    <span class="nc">PersonRepository</span> <span class="n">personRepository</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span><span class="nd">@Observes</span> <span class="nc">StartupEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="s">"Susi"</span><span class="o">);</span>
+        <span class="n">personRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatisches_befüllen_der_tabelle_mit_import_sql"><a class="anchor" href="#_automatisches_befüllen_der_tabelle_mit_import_sql"></a>9.4. Automatisches Befüllen der Tabelle mit IMPORT.sql</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>in Ordner <code>src/main/resources/</code> eine Datei <code>import.sql</code> erstellen: <code>src/main/resources/import.sql</code></p>
+</li>
+<li>
+<p>INSERTs einfügen</p>
+</li>
+<li>
+<p>beim nächsten Start der App werden die INSERTs ausgeführt</p>
+</li>
+<li>
+<p><a href="https://quarkus.io/guides/hibernate-orm" class="bare">https://quarkus.io/guides/hibernate-orm</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_namedqueries"><a class="anchor" href="#_namedqueries"></a>9.5. NamedQueries</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>2 Varianten</p>
+<div class="ulist">
+<ul>
+<li>
+<p>JP-QL</p>
+</li>
+<li>
+<p>Criteria API (verwenden wir NICHT)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">JP-QL (Java Persistence Query Language)</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="nd">@NamedQueries</span><span class="o">({</span>
+        <span class="nd">@NamedQuery</span><span class="o">(</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s">"Person.findAll"</span><span class="o">,</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="s">"select p from Person p"</span>
+        <span class="o">)</span>
+<span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>JP-QL ist vergleichbar mit SQL</p>
+</li>
+<li>
+<p>jedoch werden i.N. keine SPalten angegeben, da nur ganze Objekte zurückgegeben werden.</p>
+</li>
+<li>
+<p>die Rückgabe von Spalten ist sehr wohl möglich</p>
+</li>
+<li>
+<p>Joins und Aggregationen sind ebenfalls möglich</p>
+</li>
+<li>
+<p><a href="https://www.objectdb.com/java/jpa/query/jpql/structure" class="bare">https://www.objectdb.com/java/jpa/query/jpql/structure</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_11_09"><a class="anchor" href="#_2021_11_09"></a>10. 2021-11-09</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ausführen_einer_namedquery"><a class="anchor" href="#_ausführen_einer_namedquery"></a>10.1. Ausführen einer NamedQuery</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">getAllPersons</span><span class="o">()</span> <span class="o">{</span>
+<span class="hll">    <span class="nc">TypedQuery</span><span class="o">&lt;</span><span class="nc">Person</span><span class="o">&gt;</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span>
+</span><span class="hll">            <span class="o">.</span><span class="na">createNamedQuery</span><span class="o">(</span><span class="s">"Person.findAll"</span><span class="o">,</span><span class="nc">Person</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span>    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Person</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+    <span class="n">assertThat</span><span class="o">(</span><span class="n">persons</span><span class="o">.</span><span class="na">size</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">persons</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ausführen_einer_query"><a class="anchor" href="#_ausführen_einer_query"></a>10.2. Ausführen einer Query</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">getAllPersonsWithQuery</span><span class="o">()</span> <span class="o">{</span>
+<span class="hll">    <span class="nc">TypedQuery</span><span class="o">&lt;</span><span class="nc">Person</span><span class="o">&gt;</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span>
+</span><span class="hll">            <span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select p from Person p"</span><span class="o">,</span><span class="nc">Person</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span>    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Person</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+    <span class="n">assertThat</span><span class="o">(</span><span class="n">persons</span><span class="o">.</span><span class="na">size</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+    <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">persons</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ausführen_einer_nativequery"><a class="anchor" href="#_ausführen_einer_nativequery"></a>10.3. Ausführen einer NativeQuery</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es gibt auch hier</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NativeQuery</p>
+</li>
+<li>
+<p>NativeNamedQuery</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">getAllPersonsWithNativeQuery</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span>
+            <span class="o">.</span><span class="na">createNativeQuery</span><span class="o">(</span><span class="s">"select p.id, p.name from person p"</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">persons</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">elem</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">elem</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+    <span class="o">}</span>
+    <span class="n">assertThat</span><span class="o">(</span><span class="n">persons</span><span class="o">.</span><span class="na">size</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="mi">9</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://thorben-janssen.com/jpa-native-queries/" class="bare">https://thorben-janssen.com/jpa-native-queries/</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mikroprojekte_themen"><a class="anchor" href="#_mikroprojekte_themen"></a>10.4. Mikroprojekte-Themen</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Thema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abazović Edina</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stadtrundfahrten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ablinger Raphael</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linienbusunternehmen inkl. Fahrplan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aichinger Niklas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supermarkkt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baumgartner Lukas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teehändler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bogdan Sebastijan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Friedhofsverwaltung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handel Christoph</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schuhplattln</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hartl Anna</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gärtnerei</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hautzmayer Sheila</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tanzverein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hirsch Nico</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rezeptseite</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keintzel Florian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hotel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kerschbaum Philipp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fussballverein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">König Julia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tennisverein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Melcher Tamara</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kletterverein mit Kletterrouten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neudorfer Niklas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gebäudeverwaltung (wo sind welche Geräte installiert zB Chromecasts)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pavelescu Darius-Cristian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Musikdatenbank</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pelzeder Joachim</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personaleinteilung in Produktonsbetrieb mit Schichten (es wird durchgehend produziert)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plakolb Marcel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Luftfahrtlinie (Wo fliegen die Flugzeuge, Linien)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rathberger Jakob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doodle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remplbauer Markus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modellagentur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sugic Oliver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schwimmverein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tran Michael</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restaurant (Tischreservierung)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tunc Johannes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reisebüro</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_übung"><a class="anchor" href="#_übung"></a>10.5. Übung</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellen eines Datenmodell in plantuml (3-5 Entitäten)</p>
+</li>
+<li>
+<p>Publishen zu gh-pages</p>
+</li>
+<li>
+<p>Zusätzlich eine kurze Erklärung für die Anwendung</p>
+</li>
+<li>
+<p>Termin: 11.11.2021</p>
+</li>
+<li>
+<p>Ordner im Root-Folder: asciidocs, backend, frontend</p>
+</li>
+<li>
+<p>Erstellen eines Quarkus-Projekts mit einer Tabelle, persisitert in eine postgre-db und einem Endpoint</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_erstellen_einer_aggregierten_abfrage"><a class="anchor" href="#_erstellen_einer_aggregierten_abfrage"></a>10.6. Erstellen einer aggregierten Abfrage</h3>
+<div class="sect3">
+<h4 id="_schritt_1_sql_query"><a class="anchor" href="#_schritt_1_sql_query"></a>10.6.1. Schritt 1: Sql-Query</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sql">  <span class="k">select</span> <span class="n">substr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">from</span> <span class="n">person</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">substr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">order</span> <span class="k">by</span> <span class="mi">1</span><span class="p">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_schritt_2_übertragen_nach_java"><a class="anchor" href="#_schritt_2_übertragen_nach_java"></a>10.6.2. Schritt 2: Übertragen nach Java</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">countLetters</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select substring(p.name,1,1), count(p) from Person p group by substring(p.name,1,1)"</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">elem</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">elem</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+    <span class="o">}</span>
+
+    <span class="n">assertThat</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_beziehungen_zwischen_entitäten_vererbung"><a class="anchor" href="#_beziehungen_zwischen_entitäten_vererbung"></a>10.7. Beziehungen zwischen Entitäten - Vererbung</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://edufs.edu.htl-leonding.ac.at/~t.stuetz/download/nvs/presentations.2021/06_JPA.pdf" target="_blank" rel="noopener">Skriptum JPA ab Seite 44</a></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/assoziative-Beziehung.png" alt="assoziative Beziehung">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_11_16"><a class="anchor" href="#_2021_11_16"></a>11. 2021-11-16</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_namedqueries_mit_parameter"><a class="anchor" href="#_namedqueries_mit_parameter"></a>11.1. NamedQueries mit Parameter</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_aggregated_queries"><a class="anchor" href="#_aggregated_queries"></a>11.2. Aggregated Queries</h3>
+<div class="listingblock">
+<div class="title">NamedQuery in Entity</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">at.htl.carrental.entity</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.*</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@NamedQueries</span><span class="o">({</span>
+        <span class="nd">@NamedQuery</span><span class="o">(</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s">"Person.countByInital"</span><span class="o">,</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="s">"select substring(p.name,1, 1), count(p) from Person p group by substring(p.name,1, 1)"</span>
+        <span class="o">)</span>
+<span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+
+    <span class="c1">// ...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Use NamedQuery in Repository</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@ApplicationScoped</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PersonRepository</span> <span class="o">{</span>
+
+    <span class="nd">@Inject</span>
+    <span class="nc">EntityManager</span> <span class="n">em</span><span class="o">;</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="kd">public</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="nf">countByInitial</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span>
+                <span class="o">.</span><span class="na">createNamedQuery</span><span class="o">(</span><span class="s">"Person.countByInital"</span><span class="o">);</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">initials</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">initial</span> <span class="o">:</span> <span class="n">initials</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                    <span class="n">initial</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">toString</span><span class="o">().</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span>
+                    <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">initial</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="na">toString</span><span class="o">())</span>
+            <span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Test repository method</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@QuarkusTest</span>
+<span class="kd">class</span> <span class="nc">PersonTest</span> <span class="o">{</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">countLetters</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="nc">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select substring(p.name,1,1), count(p) from Person p group by substring(p.name,1,1)"</span><span class="o">);</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">elem</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">elem</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">elem</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+        <span class="o">}</span>
+
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_11_29_vorbereitung_für_test_w"><a class="anchor" href="#_2021_11_29_vorbereitung_für_test_w"></a>12. 2021-11-29 Vorbereitung für Test-W</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cascadierende Assoziationen</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_12_07_panache"><a class="anchor" href="#_2021_12_07_panache"></a>13. 2021-12-07 Panache</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://quarkus.io/guides/hibernate-orm-panache">Simplified Hibernate ORM with Panache</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_12_13_panache_persistence_context"><a class="anchor" href="#_2021_12_13_panache_persistence_context"></a>14. 2021-12-13 Panache - Persistence Context</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/persistence-context.png" alt="persistence context">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Befindet sich ein Java-Objekt im Persistence Context, so hat es den Status "Managed"</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ein Objekt kann den Zustand "managed" durch den Aufruf von persist() erhalten</p>
+</li>
+<li>
+<p>aber auch durch ein Holen des Objekts (Methode find()) aus der DB</p>
+</li>
+<li>
+<p>wichtig ist dabei, dass eine Transaktion aktiv ist</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Entweder Verwendung einer UserTransaction (mit tx.begin() und tx.commit())</p>
+</li>
+<li>
+<p>oder Verwendung von @Transactional</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Im Persistence Context kann man automatisch DB-Aktionen an abhängige Objekte weitergeben (zB cascading persist, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_12_14"><a class="anchor" href="#_2021_12_14"></a>15. 2021-12-14</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_datenzugriffs_pattern"><a class="anchor" href="#_datenzugriffs_pattern"></a>15.1. Datenzugriffs-Pattern</h3>
+<div class="sect3">
+<h4 id="_repository_pattern"><a class="anchor" href="#_repository_pattern"></a>15.1.1. Repository-Pattern</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_active_record_pattern"><a class="anchor" href="#_active_record_pattern"></a>15.1.2. Active-Record-Pattern</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_queries_in_panache"><a class="anchor" href="#_queries_in_panache"></a>15.2. Queries in Panache</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_12_21"><a class="anchor" href="#_2021_12_21"></a>16. 2021-12-21</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_validation"><a class="anchor" href="#_validation"></a>16.1. Validation</h3>
+<div class="paragraph">
+<p><a href="https://quarkus.io/guides/validation" class="bare">https://quarkus.io/guides/validation</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_qute"><a class="anchor" href="#_qute"></a>16.2. Qute</h3>
+<div class="paragraph">
+<p><a href="https://quarkus.io/guides/qute" class="bare">https://quarkus.io/guides/qute</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_übung_validierung_und_qute_im_microproject"><a class="anchor" href="#_übung_validierung_und_qute_im_microproject"></a>16.3. Übung: Validierung und Qute im Microproject</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Einbinden von Validation und Qute ins Mikroprojekt</p>
+</li>
+<li>
+<p>zb Bei Validation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nicht alle (Entity-)Klassen müssen validiert werden.</p>
+</li>
+<li>
+<p>es sind allerdings die Konzepte aus dem Tutorial zu verwenden, zB</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vorgefertigte Validatoren</p>
+</li>
+<li>
+<p>Erstellung eines eigenen Validators</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Es ist ein asciidoc-File zu erstellen (im Ordner asciidocs), in dem die Arbeiten dokumentiert werden.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vergleichbar mit den Lecture (pro Datum ein Kapitel) ist auch in diesen adoc-File für jede Technologie (Übung) eine kurze Doku zu erstellen (Cheat Sheet)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Warum benötige ich das? (Einsatzzweck)</p>
+</li>
+<li>
+<p>Ev. die Alternativen anführen</p>
+</li>
+<li>
+<p>Möglichkeiten der Anwendung (Code im Microproject kurz erklärt)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>diese Asciidocs sollen automatisch als gh-pages dargestellt werden</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/htl-leonding-college/asciidoctor-docker-template/releases/tag/v1.1.4" class="bare">https://github.com/htl-leonding-college/asciidoctor-docker-template/releases/tag/v1.1.4</a></p>
+</li>
+<li>
+<p><a href="https://github.com/htl-leonding-college/asciidoctor-convert-template" class="bare">https://github.com/htl-leonding-college/asciidoctor-convert-template</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/9EEB110B-7A0D-4789-923E-2BA96424C1BF_1_105_c.jpeg" alt="9EEB110B 7A0D 4789 923E 2BA96424C1BF 1 105 c">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/83005B78-FC58-424C-8ED4-73B08DA2831A_1_105_c.jpeg" alt="83005B78 FC58 424C 8ED4 73B08DA2831A 1 105 c">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/4698D10F-BB69-46A7-8EC7-1C336F8D6AE5_1_105_c.jpeg" alt="4698D10F BB69 46A7 8EC7 1C336F8D6AE5 1 105 c">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/95078A62-C1F7-41A5-A9E6-553C0C8143D8_1_105_c.jpeg" alt="95078A62 C1F7 41A5 A9E6 553C0C8143D8 1 105 c">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2021_12_23"><a class="anchor" href="#_2021_12_23"></a>17. 2021-12-23</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_übung_grpc_termin_5_jänner_2022"><a class="anchor" href="#_übung_grpc_termin_5_jänner_2022"></a>17.1. Übung: gRPC - Termin: 5. Jänner 2022</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Recherche: Was ist gRPC? (Einsatzzweck, welches Problem wird gelöst, Konzept)</p>
+</li>
+<li>
+<p>Mutiny: <a href="https://quarkus.io/guides/getting-started-reactive" class="bare">https://quarkus.io/guides/getting-started-reactive</a></p>
+</li>
+<li>
+<p>Verwendung in Quarkus &#8594; Tutorials auf quarkus.io</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/grpc-tutorials.png" alt="grpc tutorials">
+</div>
+</div>
+</li>
+<li>
+<p>Einbauen ins Mikroprojekt und dokumentieren</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qute_2"><a class="anchor" href="#_qute_2"></a>18. Qute</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/qute.png" alt="qute">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beispiel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In der Klasse StudentResource sind die Qute-Template typisiert deklariert.</p>
+</li>
+<li>
+<p>Wird im Browser die jeweilige Route des Qute-Templates aufgerufen, liefert der Server die das gerenderte Template als html aus</p>
+</li>
+<li>
+<p>Der User kann nun zB ein Formular ausfüllen.</p>
+</li>
+<li>
+<p>Nach dem Klicken auf den Submit Button, werden die Inhalte der Formularfelder an den im Form-Attribut "action" angegeben REST-Endpoint übermittelt.</p>
+</li>
+<li>
+<p>Dieser REST-Endpoint gibt nun die neue Route jener Seite, die als nächstes angezeigt wird, an den Browser zurück</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0.0<br>
+Last updated 2022-01-10 13:19:32 UTC
+</div>
+</div>
+</body>
+</html>
