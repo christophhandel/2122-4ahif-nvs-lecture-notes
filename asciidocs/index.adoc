@@ -593,3 +593,20 @@ image::qute.png[]
 ** Dieser REST-Endpoint gibt nun die neue Route jener Seite, die als nächstes angezeigt wird, an den Browser zurück
 
 
+== 2022-01-11
+
+=== Quarkus Security
+
+==== Hausübung
+* Using Security with .properties File: https://quarkus.io/guides/security-properties
+* Using Security wit JDBC: 
+https://quarkus.io/guides/security-jdbc
+
+==== Besprochen
+
+Wir haben über Secuirty mithilfe von Keycloak gesprochen: https://www.keycloak.org/downloads
+
+* kleine mini quarkus anwendung die geschützt werden (zb nur rest teil)
+
+*user haben Rollen --> Rollen geben einen User gewisse rechte die er machen darf.
+
